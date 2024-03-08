@@ -38,10 +38,10 @@ public class Singleton<T> : MonoBehaviour where T : Component
             Destroy(gameObject);
         }
         
-        _Initialize();
+        _InitializeOnAwake();
     }
 
-    protected virtual void _Initialize()
+    protected virtual void _InitializeOnAwake()
     {
         
     }
