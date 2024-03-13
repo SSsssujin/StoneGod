@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     
     private bool IsMoveInput => !Mathf.Approximately(_moveDirection.sqrMagnitude, 0f);
 
-    public void Start()
+    public void DoStart()
     {
         // Caching
         _camera = Camera.main;
@@ -58,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_playerInput == null) return;
+        
         _CalculateMovement();
         _SetPlayerRotation();
         _MoveCharacter();

@@ -9,7 +9,7 @@ public class AnpanmanProjectileController : ProjectileController
     protected override void DoSkillJob()
     {
         base.DoSkillJob();
-        _owner.Character.OnDamage(handicap);
+        _owner.CharacterBase.OnDamage(handicap);
     }
 
 }

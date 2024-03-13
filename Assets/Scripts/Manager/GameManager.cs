@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-// ExecutionOrder 설정하면 좋을듯
+[DefaultExecutionOrder(-10)]
 public class GameManager : Singleton<GameManager>
 {
     // Managers

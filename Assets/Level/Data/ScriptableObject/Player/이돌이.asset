@@ -18,5 +18,9 @@ MonoBehaviour:
   MaxHP: 0
   AttackPower: 0
   AttackSpeed: 5
+  DefensePower: 0
   SkillBook:
-    _skillTypes: 01000000
+    _skillNameList:
+    - ProjectileController
+    - ShieldSkillController
+  Character: {fileID: 0}

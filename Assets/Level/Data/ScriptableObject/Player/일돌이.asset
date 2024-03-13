@@ -22,4 +22,5 @@ MonoBehaviour:
   SkillBook:
     _skillNameList:
     - AnpanmanProjectileController
+    - BindingSkillController
   Character: {fileID: 0}

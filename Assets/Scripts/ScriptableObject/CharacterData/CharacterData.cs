@@ -16,7 +16,7 @@ public abstract class CharacterData : ScriptableObject
     public SkillBook SkillBook;
 
     // Edit
-    public CharacterBase Character;
+    public CharacterBase CharacterBase;
 
     public virtual void Start()
     {

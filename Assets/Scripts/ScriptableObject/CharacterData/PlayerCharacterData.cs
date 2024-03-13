@@ -15,7 +15,7 @@ public class PlayerCharacterData : CharacterData
         // Set Skills
         SkillBook.Initialize(this);
         
-        Model.gameObject.SetActive(false);
+        //Model.gameObject.SetActive(false);
     }
 
     public void Activate()

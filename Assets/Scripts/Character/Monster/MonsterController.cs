@@ -18,13 +18,13 @@ public class MonsterController : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         
         // Add listeners
-        _stateMachine.OnStateChanged += _PrintCurrentState;
-        OnMonsterBinded += _OnMonsterBinded;
+        _stateMachine.StateChanged += _PrintCurrentState;
+        MonsterBinded += _OnMonsterBinded;
     }
 
     private void Start()
     {
-        //_stateMachine.Initialzie(_stateMachine.IdleState);
+        _stateMachine.Initialzie(_stateMachine.IdleState);
     }
 
     private void Update()
@@ -34,18 +34,21 @@ public class MonsterController : MonoBehaviour
 
     private void _PrintCurrentState(IState state)
     {
-        Debug.Log("State changed : " + state);
+        //Debug.Log("State changed : " + state);
     }
 
     private void _OnMonsterBinded(bool isDefenseReduced)
     {
-        Debug.Log(gameObject + " is bind!!");
+        //Debug.Log(gameObject + " is bind!!");
         //_stateMachine.TransitionTo(BindState);
+        
+        //if (isDefenseReduced)
+        //  DefensePower --;
     }
     
     
     // Public properties
-    public Action<bool> OnMonsterBinded;
+    public Action<bool> MonsterBinded;
     public StateMachine StateMachine => _stateMachine;
     public NavMeshAgent NavMeshAgent => _navMeshAgent;
 }

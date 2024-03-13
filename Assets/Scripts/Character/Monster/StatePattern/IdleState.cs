@@ -14,10 +14,15 @@ public class IdleState : IState
     public void Enter()
     {
         _timer = 0;
+
+        _monster.NavMeshAgent.destination = _monster.transform.position;
     }
 
     public void Update()
     {
+        // For Test
+        return;
+        
         _timer += Time.deltaTime;
 
         if (_timer > 2.0f)

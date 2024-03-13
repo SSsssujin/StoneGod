@@ -23,7 +23,7 @@ public class ProjectileSkill : SkillBase
         _avoidTag = avoidTag;
         
         // Edit
-        _owner = owner.Character;
+        _owner = owner.CharacterBase;
         
         _StartDestroy(_destroyTimer);
     }

@@ -24,7 +24,7 @@ public class StateMachine
         CurrentState = state;
         state.Enter();
         
-        OnStateChanged?.Invoke(state);
+        StateChanged?.Invoke(state);
     }
 
     public void TransitionTo(IState nextState)
@@ -34,7 +34,7 @@ public class StateMachine
         nextState.Enter();
 
         // notify other objects that state has changed
-        OnStateChanged?.Invoke(nextState);
+        StateChanged?.Invoke(nextState);
     }
 
     public void Update()
@@ -45,5 +45,5 @@ public class StateMachine
         }
     }
 
-    public event Action<IState> OnStateChanged;
+    public event Action<IState> StateChanged;
 }
