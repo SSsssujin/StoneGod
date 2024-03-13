@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: "\uC548\uACBD\uC7BD\uC774"
   m_EditorClassIdentifier: 
   TemplateID: 0
-  Name: 
+  Name: SunglassesMonster
   Model: {fileID: 0}
   MaxHP: 100
   AttackPower: 0
   AttackSpeed: 0
   SkillBook:
-    _skillTypes: 
+    _skillTypes: []
+  Character: {fileID: 0}

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
+// Has responsibility for manage stats
 public abstract class CharacterBase : MonoBehaviour, IDamageable
 {
     [SerializeField]

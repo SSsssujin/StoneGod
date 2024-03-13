@@ -1,17 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class StateMachine : MonoBehaviour
+[Serializable]
+public class StateMachine
 {
-    // protected void _SetState(eCharacterState state)
-    // {
-    //     StopCoroutine(nameof(_cOnStateUpdate));
-    //     _OnStateExit();
-    //
-    //     CurrentState = state;
-    //
-    //     _OnStateEnter();
-    //     StartCoroutine(nameof(_cOnStateUpdate));
-    // }
+    private MonsterController _monsterController;
+
+    public IdleState IdleState;
+    public WalkState WalkState;
+    
+    public IState CurrentState { get; private set; }
+
+    public StateMachine(MonsterController monster)
+    {
+        _monsterController = monster;
+
+        IdleState = new(monster);
+        WalkState = new(monster);
+    }
+    
+    // enum ?
+    public void Initialzie(IState state)
+    {
+        CurrentState = state;
+        state.Enter();
+        
+        OnStateChanged?.Invoke(state);
+    }
+
+    public void TransitionTo(IState nextState)
+    {
+        CurrentState.Exit();
+        CurrentState = nextState;
+        nextState.Enter();
+
+        // notify other objects that state has changed
+        OnStateChanged?.Invoke(nextState);
+    }
+
+    public void Update()
+    {
+        if (CurrentState != null)
+        {
+            CurrentState.Update();
+        }
+    }
+
+    public event Action<IState> OnStateChanged;
 }
