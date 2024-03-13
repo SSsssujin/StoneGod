@@ -18,7 +18,8 @@ MonoBehaviour:
   MaxHP: 100
   AttackPower: 5
   AttackSpeed: 3
+  DefensePower: 0
   SkillBook:
-    _skillTypes:
-    - ProjectileController
+    _skillNameList:
+    - AnpanmanProjectileController
   Character: {fileID: 0}

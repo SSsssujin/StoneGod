@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public static class Utils 
 {
     public static float ConvertAttackSpeedToInterval(int attackSpeed)
@@ -6,6 +8,6 @@ public static class Utils
         interval -= attackSpeed * 0.1f;
         return interval;
     }
-    
-    //public static string PlayerModelPath = "";
+
+    public static bool InputSkillKey => Input.GetKeyDown(KeyCode.E);
 }

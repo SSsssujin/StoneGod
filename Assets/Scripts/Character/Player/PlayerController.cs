@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMovement _playerMovement;
     private PlayerCharacter _playerCharacters;
     
+    // Player party
     [SerializeField]
     private List<PlayerCharacterData> _playerCharacterParty;
     private PlayerCharacterData _curPlayerCharacterData;
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
         OnPlayerInputDetected?.Invoke(movement);
     }
 
-    public Action<List<PlayerCharacterData>> OnPlayerPartyUpdated;
     public Action OnPlayerCharacterChanged;
+    public Action<List<PlayerCharacterData>> OnPlayerPartyUpdated;
     public Action<Vector2> OnPlayerInputDetected;
 }

@@ -18,7 +18,7 @@ public class ProjectileController : SkillController
         _shootInterval = Utils.ConvertAttackSpeedToInterval(_owner.AttackSpeed);
     }
 
-    private void Update()
+    protected override void _OnUpdate()
     {
         if (Input.GetMouseButton(0) && Time.time >= _lastShootTime + _shootInterval)
         {
@@ -41,6 +41,6 @@ public class ProjectileController : SkillController
         ProjectileSkill ps = bullet.DemandComponent<ProjectileSkill>();
         bullet.GetComponent<Collider>().isTrigger = true;
         bullet.DemandComponent<Rigidbody>().useGravity = false;
-        ps.Initialize(GameManager.Player.transform.forward, _speed, _lifeTime, _owner);
+        ps.Initialize(GameManager.Player.transform.forward, _speed, _lifeTime, _owner, "Player");
     }
 }

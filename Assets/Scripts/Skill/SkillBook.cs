@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ using UnityEngine;
 public class SkillBook
 {
     [SerializeField]
-    private List<string> _skillTypes;
+    private List<string> _skillNameList;
     
     private List<SkillController> _skillList = new();
 
@@ -22,7 +21,7 @@ public class SkillBook
 
     public void _AddSkill()
     {
-        foreach (var skillType in _skillTypes)
+        foreach (var skillType in _skillNameList)
         {
             Type classType = Type.GetType(skillType);
             Component skillController = _owner.Model.GetComponent(classType);

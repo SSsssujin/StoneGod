@@ -10,4 +10,5 @@ public enum SkillType
 public static class TempStoredInfo
 {
     public const int AnpanmanProjectileExpense = 1;
+    public const int BindingSkillDefenseReduceConditionCount = 5;
 }

@@ -11,6 +11,7 @@ public abstract class CharacterData : ScriptableObject
     public int MaxHP;
     [Range(1, 5)] public float AttackPower;
     [Range(1, 5)] public int AttackSpeed;
+    public float DefensePower;
 
     public SkillBook SkillBook;
 

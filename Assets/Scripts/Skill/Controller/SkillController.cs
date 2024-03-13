@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class SkillController : MonoBehaviour
 {
     protected CharacterData _owner;
+    protected float _cooldownTime;
 
     protected virtual void Start()
     {
@@ -19,10 +20,18 @@ public abstract class SkillController : MonoBehaviour
         
         _InitializeSkill();
     }
-    
+
+    // Edit later
+    private void Update()
+    {
+        _OnUpdate();
+    }
+
     protected virtual void _InitializeSkill() { }
     
     protected abstract void DoSkillJob();
+
+    protected virtual void _OnUpdate() { }
 
     public Action OnPlayerChanged;
 

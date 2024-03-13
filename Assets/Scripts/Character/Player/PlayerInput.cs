@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField]
     private Vector2 _movement;
     
     private bool _isPlayerInputBlocked;
