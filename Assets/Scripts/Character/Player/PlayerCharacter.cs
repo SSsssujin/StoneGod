@@ -19,11 +19,10 @@ public class PlayerCharacter : CharacterBase
     {
         _CharacterData.Start();
         //_CharacterData.Activate();
-        
     }
 
     public void ChangePlayer()
     {
-        
+        // Push tester
     }
 }
